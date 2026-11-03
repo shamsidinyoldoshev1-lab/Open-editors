@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360° Virtual Tur | Kottej Sayohati</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0a0f1d;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 20px 0;
+    }
+
+    .vt-section {
+      padding: 40px 20px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* 1. Header */
+    .vt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .vt-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .vt-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #10b981;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .vt-badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .vt-badge-link:hover {
+      border-color: #10b981;
+      background: #1e293b;
+    }
+
+    .vt-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10b981;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .vt-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .vt-desc {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 16px;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    /* Yashil Tugma */
+    .vt-open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 26px;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);
+      color: #022c22;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .vt-open-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -5px rgba(16, 185, 129, 0.45);
+      background: linear-gradient(135deg, #34d399 0%, #14b8a6 100%);
+    }
+
+    /* 2. Iframe Konteyneri */
+    .vt-container {
+      position: relative;
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Responsiv balandlik */
+    .vt-iframe-box {
+      width: 100%;
+      height: 480px;
+    }
+
+    @media (min-width: 640px) {
+      .vt-iframe-box { height: 580px; }
+    }
+
+    @media (min-width: 1024px) {
+      .vt-iframe-box { height: 720px; }
+    }
+
+    .vt-iframe-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Pastki panel */
+    .vt-footer-bar {
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .vt-footer-bar a {
+      color: #34d399;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="vt-section">
+    <!-- Header -->
+    <div class="vt-header">
+      <div>
+        <div class="vt-badges">
+          <div class="vt-badge">
+            <span class="vt-badge-dot"></span>
+            INTERAKTIV 360° PANORAMA
+          </div>
+          <!-- To'g'ridan-to'g'ri Kuula link nishoni -->
+          <a href="https://kuula.co/post/LCPZM" target="_blank" rel="noopener noreferrer" class="vt-badge-link">
+            🔗 kuula.co/post/LCPZM ↗
+          </a>
+        </div>
+        <h2 class="vt-title">Kottej Bo‘ylab Virtual Sayohat</h2>
+        <p class="vt-desc">
+          Uydan chiqmasdan kottejning barcha xonalari, zallari, basseyni va hovlisini to‘liq 360 darajada ko‘zdan kechiring.
+        </p>
+      </div>
+
+      <!-- Yashil Tugma (https://kuula.co/post/LCPZM) -->
+      <a 
+        href="https://kuula.co/post/LCPZM" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="vt-open-btn"
+      >
+        <span>Yangi oynada ochish</span>
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Iframe oynasi -->
+    <div class="vt-container">
+      <div class="vt-iframe-box">
+        <iframe 
+          title="Kottej 360 Virtual Tur"
+          src="https://kuula.co/share/collection/7dXdt?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+          allow="accelerometer; gyroscope; xr-spatial-tracking; fullscreen"
+          allowfullscreen="true"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="vt-footer-bar">
+        <div>
+          <span>● Kuula Post:</span> 
+          <a href="https://kuula.co/post/LCPZM" target="_blank" rel="noopener noreferrer">https://kuula.co/post/LCPZM</a>
+        </div>
+        <div>* Boshqa xonaga o‘tish uchun ekrandagi strelkalarni bosing</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
